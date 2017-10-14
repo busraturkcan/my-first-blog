@@ -6,12 +6,17 @@
     <body>
       <div>
             <h1><a href="">Django Girls Blog</a></h1>
-        </div>
+      </div>
+      {% for post in posts %}
+    <div>
+        <p>published: {{ post.yayinlanma_tarihi }}</p>
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaks }}</p>
+    </div>
+{% endfor %}
 
         <div>
-            <p>published: 14.10.2017, 16:16</p>
-            <h2><a href="">İlk Blogum</a></h2>
-            <p>Çok heyecanlıyım! Bu benim ilk blogum. Ne kadar zevkli bir işmiş bilgisayarlarla uğraşmak. Artık bilgisayar başından kalkmam. </p>
+            {{ posts }}
         </div>
 
         <div>
